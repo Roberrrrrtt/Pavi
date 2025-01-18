@@ -16,6 +16,16 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6JGJ74P10"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q6JGJ74P10');
+    </script>
+
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
@@ -150,6 +160,33 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        .slide-in {
+            transform: translateY(-100%);
+            transition: transform 1s ease-in-out;
+        }
+
+        .slide-in.visible {
+            transform: translateY(0);
+        }
+
+        .zoom-in {
+            transform: scale(0);
+            transition: transform 1s ease-in-out;
+        }
+
+        .zoom-in.visible {
+            transform: scale(1);
+        }
     </style>
 </head>
 
@@ -162,15 +199,15 @@
             <a href="contact.html" class="nav-link">Contacto</a>
         </nav>
     </header>
-    <main class="animate__animated animate__fadeInUp">
-        <div class="content">
+    <main class="animate__animated animate__fadeInUp fade-in">
+        <div class="content slide-in">
             <h2>Contacto</h2>
             <p>Para más información, contáctanos a través de:</p>
             <p><strong>Teléfono:</strong> +34 664 844 830</p>
             <p><strong>Email:</strong> info@pavimentogirona.com</p>
 
             <!-- Botones de acción -->
-            <div class="contact-buttons">
+            <div class="contact-buttons zoom-in">
                 <a href="tel:+34664844830" class="btn-call">Llamar ahora</a>
                 <a href="mailto:info@pavimentogirona.com" class="btn-email">Enviar correo</a>
             </div>
@@ -183,6 +220,7 @@
         </p>
     </footer>
 
+    <script src="animations.js"></script>
 
 </body>
 
