@@ -31,17 +31,46 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17706570558"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17706570558">
+    </script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'AW-17706570558');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17706570558');
     </script>
     <!-- Event snippet for Page view conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-17706570558/P_W6CLW6yLobEL6mk_tB'});
-</script>
+    <script>
+      gtag('event', 'conversion', {'send_to': 'AW-17706570558/P_W6CLW6yLobEL6mk_tB'});
+    </script>
+    <!-- Event snippet for Page view conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined' && url) {
+          // Si es un hash/ancla, no redirigir (dejar que el navegador maneje el scroll)
+          if (url.indexOf('#') === 0) {
+            return;
+          }
+          // Si es una URL externa o absoluta, abrir normalmente
+          if (url.indexOf('http') === 0 || url.indexOf('//') === 0) {
+            window.location = url;
+          } else {
+            // URL relativa
+            window.location.href = url;
+          }
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17706570558/P_W6CLW6yLobEL6mk_tB',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -57,14 +86,14 @@
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="galeria.html">Galería</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#contacto" class="btn btn-sm btn-primary">Contacto</a></li>
+                    <li><a href="#contacto" class="btn btn-sm btn-primary" onclick="gtag('event', 'conversion', {'send_to': 'AW-17706570558/P_W6CLW6yLobEL6mk_tB'});">Contacto</a></li>
                 </ul>
             </nav>
             <div class="cta-inline">
                 <a href="tel:+34664844830" class="cta-phone" aria-label="Llamar">
                     <span>+34 664 844 830</span>
                 </a>
-                <a href="https://wa.me/34664844830" target="_blank" rel="noopener" class="btn btn-sm btn-whatsapp">WhatsApp</a>
+                <a href="https://wa.me/34664844830" target="_blank" rel="noopener" class="btn btn-sm btn-whatsapp" onclick="gtag_report_conversion('https://wa.me/34664844830');">WhatsApp</a>
             </div>
         </div>
     </header>
@@ -76,7 +105,7 @@
                 <h1>Pavimento Impreso Girona | Pavimentos, Piscinas, Muros y Fachadas</h1>
                 <p>Especialistas en pavimento impreso en Girona, Costa Brava y toda Cataluña. Pavimentos impresos decorativos, piscinas, muros, fachadas, nivelaciones y suelos. Servicio en Lloret de Mar, Platja d'Aro, Tossa de Mar, Blanes, Palamós y más zonas. Hormigón impreso de calidad profesional.</p>
                 <div class="hero-ctas">
-                    <a href="#contacto" class="btn btn-primary btn-lg">Pide tu presupuesto (sin compromiso)</a>
+                    <a href="#contacto" class="btn btn-primary btn-lg" onclick="gtag('event', 'conversion', {'send_to': 'AW-17706570558/P_W6CLW6yLobEL6mk_tB'});">Pide tu presupuesto (sin compromiso)</a>
                  <!--   <a href="galeria.html" class="btn btn-outline btn-lg">Ver galería</a> -->
                     <a href="https://maps.app.goo.gl/FD2MMc1dVxWn8q4e7" target="_blank" rel="noopener" class="btn btn-lg btn-google">Ver perfil en Google Maps</a>
                 </div>
@@ -93,7 +122,7 @@
             <div class="container">
                 <header class="section-header">
                     <h2>Pavimentos Impresos</h2>
-             <!--       <p>Pavimento impreso decorativo y duradero para exteriores e interiores. Hormigón impreso con texturas de piedra, madera y adoquín. Servicio de pavimentos impresos en toda la provincia de Girona.</p> -->
+            <!--        <p>Pavimento impreso decorativo y duradero para exteriores e interiores. Hormigón impreso con texturas de piedra, madera y adoquín. Servicio de pavimentos impresos en toda la provincia de Girona.</p> -->
                 </header>
                 <div class="grid cards">
                     <article class="card"><h3>Construcción y mantenimiento</h3><p>Pavimentos impresos para viviendas, comunidades y comercios.</p></article>
@@ -112,7 +141,7 @@
                     <h2>Piscinas, Muros, Fachadas y Nivelaciones</h2>
                     <p>Especialistas en pavimento impreso para piscinas, muros impresos, fachadas, nivelación de terrenos y suelos decorativos. Servicio completo en Girona, Costa Brava y toda Cataluña.</p>
                     <div class="hero-ctas">
-                        <a href="#contacto" class="btn btn-primary">Presupuesto (sin compromiso)</a>
+                        <a href="#contacto" class="btn btn-primary" onclick="gtag('event', 'conversion', {'send_to': 'AW-17706570558/P_W6CLW6yLobEL6mk_tB'});">Presupuesto (sin compromiso)</a>
                         <a href="galeria.html" class="btn btn-outline">Ver galería</a>
                     </div>
                 </header>
@@ -405,6 +434,7 @@
                         <input type="hidden" name="_subject" value="Nueva solicitud · Pavimento impreso Girona">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://pavimentogirona.com/thank-you.html">
                         <div class="fields">
                             <div class="field">
                                 <label for="name">Nombre</label>
@@ -424,8 +454,8 @@
                             </div>
                         </div>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Enviar formulario (presupuesto sin compromiso)</button>
-                            <a class="btn btn-outline" href="https://wa.me/34664844830" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+                            <button type="submit" class="btn btn-primary" onclick="gtag('event', 'conversion', {'send_to': 'AW-17706570558/P_W6CLW6yLobEL6mk_tB'});">Enviar formulario (presupuesto sin compromiso)</button>
+                            <a class="btn btn-outline" href="https://wa.me/34664844830" target="_blank" rel="noopener" onclick="gtag_report_conversion('https://wa.me/34664844830');">Hablar por WhatsApp</a>
                         </div>
                         <p class="form-note">Protegemos tus datos. Solo usaremos tu información para responder a tu solicitud.</p>
                         <div id="form-message" class="form-message" style="display: none;"></div>
@@ -482,7 +512,7 @@
 
     <!-- Floating CTA -->
     <div class="floating-ctas">
-        <a class="float-btn float-wa" href="https://wa.me/34664844830" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <a class="float-btn float-wa" href="https://wa.me/34664844830" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="gtag_report_conversion('https://wa.me/34664844830');">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/>
             </svg>
