@@ -8,12 +8,45 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6JGJ74P10"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17706570558">
+    </script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'G-Q6JGJ74P10');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17706570558');
+    </script>
+    <!-- Event snippet for Page view conversion page -->
+    <script>
+      gtag('event', 'conversion', {'send_to': 'AW-17706570558/P_W6CLW6yLobEL6mk_tB'});
+    </script>
+    <!-- Event snippet for Page view conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined' && url) {
+          // Si es un hash/ancla, no redirigir (dejar que el navegador maneje el scroll)
+          if (url.indexOf('#') === 0) {
+            return;
+          }
+          // Si es una URL externa o absoluta, abrir normalmente
+          if (url.indexOf('http') === 0 || url.indexOf('//') === 0) {
+            window.location = url;
+          } else {
+            // URL relativa
+            window.location.href = url;
+          }
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17706570558/P_W6CLW6yLobEL6mk_tB',
+          'event_callback': callback
+      });
+      return false;
+    }
     </script>
 </head>
 <body>
